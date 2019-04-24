@@ -1,0 +1,22 @@
+{
+  "name": "Sakura",
+  "version": "0.1.0",
+  "summary": "A short description of Sakura.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/croberts22/Sakura",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "croberts22": "spacepyro@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/croberts22/Sakura.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Sakura/Classes/**/*"
+}
