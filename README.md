@@ -1,4 +1,4 @@
-# Sakura
+![sakura](https://i.imgur.com/7rbTpbx.png)
 
 [![CI Status](https://img.shields.io/travis/croberts22/Sakura.svg?style=flat)](https://travis-ci.org/croberts22/Sakura)
 [![Version](https://img.shields.io/cocoapods/v/Sakura.svg?style=flat)](https://cocoapods.org/pods/Sakura)
