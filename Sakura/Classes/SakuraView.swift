@@ -54,9 +54,11 @@ final public class SakuraView: UIView {
     }
     
     public func configure(with petal: Petal) {
-        
         label.text = petal.message.message
-        
+    }
+    
+    public func animator(with animations: (() -> Void)? = nil) -> UIViewPropertyAnimator {
+        UIViewPropertyAnimator(duration: 1.0, dampingRatio: 0.6, animations: animations)
     }
     
 }

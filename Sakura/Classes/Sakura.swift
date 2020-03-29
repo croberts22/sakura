@@ -51,7 +51,7 @@ public struct Message {
 
 public final class Petal {
     
-    weak var destinationView: UIView?
+    let destinationView: UIView
     let message: Message
     let style: PetalStyle
     
@@ -85,31 +85,40 @@ public final class Sakura {
     
     private func animate(petal: Petal) {
         let sakuraView: SakuraView = SakuraView(petal: petal)
+        let animator: UIViewPropertyAnimator = prepare(sakuraView: sakuraView, with: petal)
+        animator.startAnimation()
+    }
+    
+    private func prepare(sakuraView: SakuraView, with petal: Petal) -> UIViewPropertyAnimator {
         sakuraView.backgroundColor = .purple
         
-        guard let view = petal.destinationView else { return }
+        let parentView: UIView = petal.destinationView
         
-        view.addSubview(sakuraView)
+        parentView.addSubview(sakuraView)
         
-        sakuraView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80.0).isActive = true
-        sakuraView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        sakuraView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        let bottomAnchor = sakuraView.bottomAnchor.constraint(equalTo: parentView.topAnchor, constant: -80.0)
+        bottomAnchor.isActive = true
+        
+        sakuraView.leftAnchor.constraint(equalTo: parentView.leftAnchor).isActive = true
+        sakuraView.rightAnchor.constraint(equalTo: parentView.rightAnchor).isActive = true
         sakuraView.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         
-        // TODO: Animation
+        parentView.layoutIfNeeded()
         
+        
+        // FIXME: Add constant to Petal enum.
+        bottomAnchor.constant = 160.0
+        let animator: UIViewPropertyAnimator = sakuraView.animator {
+            parentView.layoutIfNeeded()
+        }
+        
+        bottomAnchor.constant = -80.0
+        animator.addAnimations({
+            animator.isReversed = true
+        }, delayFactor: 3.0)
+        
+        return animator
     }
-    
-    public func dismiss() {
 
-        guard let petal = currentPetal, let view = petal.destinationView else { return }
-        
-        // TODO: Animation
-        
-        view.removeFromSuperview()
-        
-    }
-    
-    
     
 }
