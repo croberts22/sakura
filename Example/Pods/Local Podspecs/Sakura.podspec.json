@@ -9,14 +9,15 @@
     "file": "LICENSE"
   },
   "authors": {
-    "croberts22": "spacepyro@gmail.com"
+    "croberts22": "spacepyro@protonmail.com"
   },
   "source": {
     "git": "https://github.com/croberts22/Sakura.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/spacepyro",
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
   "source_files": "Sakura/Classes/**/*"
 }

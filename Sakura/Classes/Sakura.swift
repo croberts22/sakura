@@ -30,7 +30,7 @@ public enum PetalStyle {
     var accessoryView: UIView? {
         switch self {
         case .standard: return nil
-        case .loading: return UIActivityIndicatorView(activityIndicatorStyle: .white)
+        case .loading: return UIActivityIndicatorView(style: .white)
         case .success: return nil
         case .failure: return nil
         case .custom(_, let accessoryView): return accessoryView
