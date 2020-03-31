@@ -7,12 +7,18 @@
 
 import UIKit
 
+
+/// A view that display messages from a `Petal`.
 final public class SakuraView: UIView {
+
+    // MARK: - Properties
 
     private let contentView: UIView = UIView()
     private let label: UILabel = UILabel()
     private var accessoryView: UIView?
-    
+
+    // MARK: - Initializers
+
     public init(petal: Petal) {
         label.text = petal.message.message
         accessoryView = petal.style.accessoryView
@@ -23,6 +29,25 @@ final public class SakuraView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Public Methods
+
+
+    /// Configures this view.
+    /// - Parameter petal: A `Petal` to configure this view with.
+    public func configure(with petal: Petal) {
+        label.text = petal.message.message
+    }
+
+
+    /// Provides a default `UIViewPropertyAnimator` for this view.
+    /// - Parameter animations: A closure of actions to animate.
+    /// - Returns: An `UIViewPropertyAnimator`.
+    public func animator(with animations: (() -> Void)? = nil) -> UIViewPropertyAnimator {
+        UIViewPropertyAnimator(duration: 1.0, dampingRatio: 0.6, animations: animations)
+    }
+
+    // MARK: - Private Methods
     
     private func setup() {
         
@@ -51,14 +76,6 @@ final public class SakuraView: UIView {
         label.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20.0).isActive = true
         label.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20.0).isActive = true
         label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-    }
-    
-    public func configure(with petal: Petal) {
-        label.text = petal.message.message
-    }
-    
-    public func animator(with animations: (() -> Void)? = nil) -> UIViewPropertyAnimator {
-        UIViewPropertyAnimator(duration: 1.0, dampingRatio: 0.6, animations: animations)
     }
     
 }

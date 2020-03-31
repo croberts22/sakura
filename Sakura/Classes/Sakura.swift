@@ -69,19 +69,28 @@ public final class Petal {
     
 }
 
+/// A message orchestrator that gently displays messages in full bloom. 🌸
 public final class Sakura {
-    
+
+    // MARK: - Properties
+
     public static let shared: Sakura = Sakura()
     private var queue: [Petal] = [Petal]()
     weak var currentPetal: Petal?
+
+    // MARK: - Initializers
     
     public init() { }
+
+    // MARK: - Public Methods
     
     public func display(petal: Petal) {
         queue.append(petal)
         currentPetal = petal
         animate(petal: petal)
     }
+
+    // MARK: - Private Methods
     
     private func animate(petal: Petal) {
         let sakuraView: SakuraView = SakuraView(petal: petal)
