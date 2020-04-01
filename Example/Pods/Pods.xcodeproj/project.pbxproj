@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14A65900A2C1E98011C7446234428D2C /* Sakura-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4A47ABE754C2BF5B67F1D7344E37884 /* Sakura-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CE9F6F42432E94700403FFB /* Petal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9F6F32432E94700403FFB /* Petal.swift */; };
 		3C972D33BF73CB166359B10ED99D0E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		48EBE5699035A1ECC6DCB0BDE687BDCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		61ADE9B64797150EB9A33EFAD4FBAF9F /* Pods-Sakura_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D379A31F1F2CFBA4BB5ED55C445BC911 /* Pods-Sakura_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,17 +39,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		046EDE4D71128E3FBCC1AECB84C92880 /* Sakura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Sakura.framework; path = Sakura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		046EDE4D71128E3FBCC1AECB84C92880 /* Sakura.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sakura.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5E8D3E693D7A8BC412DFC9B5FAF967 /* Sakura.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sakura.swift; path = Sakura/Classes/Sakura.swift; sourceTree = "<group>"; };
 		161CF7766FBEAE70A1BD8AA0E20AE713 /* Sakura.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Sakura.modulemap; sourceTree = "<group>"; };
 		26AD8183EC67323348F396A3C47B8EAE /* Pods-Sakura_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sakura_Tests-dummy.m"; sourceTree = "<group>"; };
+		2CE9F6F32432E94700403FFB /* Petal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Petal.swift; path = Sakura/Classes/Petal.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		351AA42CEE9E800AC27E83BE50597389 /* SakuraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SakuraView.swift; path = Sakura/Classes/SakuraView.swift; sourceTree = "<group>"; };
 		42FBA85852D9B2239A3C6E2A529FB962 /* Pods-Sakura_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sakura_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		43F0D715A6A5BCA105C7924AEE28D8D1 /* Pods-Sakura_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sakura_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4BE48FC7D81A9DEA717187422D3DC7F4 /* Pods-Sakura_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sakura_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		582A7E610CF90EC52AA79BF0B12D3AC4 /* Pods-Sakura_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sakura_Tests-Info.plist"; sourceTree = "<group>"; };
-		652410D6BF96087493D3AEB462A53306 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		652410D6BF96087493D3AEB462A53306 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		694F99DA5F30036CAE44594A6F56E718 /* Pods-Sakura_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sakura_Example.modulemap"; sourceTree = "<group>"; };
 		6A1D5E9F0D6C457D4C8331F13A14BD7A /* Pods-Sakura_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sakura_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6C489DE0BEB5750F22602AC23EC7AD10 /* Pods-Sakura_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sakura_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,18 +60,18 @@
 		95FE05837E302C861648D87E4AF965F8 /* Pods-Sakura_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sakura_Example-frameworks.sh"; sourceTree = "<group>"; };
 		96B0C79590FC0D88C1DF15BB2089DCF6 /* Pods-Sakura_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sakura_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9893BAB82AF8AE8126E10CA985000837 /* Pods-Sakura_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sakura_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A35EF04B1D6685C70895BB2BD2B633BB /* Sakura-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sakura-prefix.pch"; sourceTree = "<group>"; };
-		AF7F5584AA2D1644F04F16D6F4A5F17D /* Pods_Sakura_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sakura_Example.framework; path = "Pods-Sakura_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7F5584AA2D1644F04F16D6F4A5F17D /* Pods_Sakura_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sakura_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B164C5A279BAFB9B6F911E601698B3E8 /* Pods-Sakura_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sakura_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B4A47ABE754C2BF5B67F1D7344E37884 /* Sakura-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Sakura-umbrella.h"; sourceTree = "<group>"; };
-		BD796BB89C477B32C4B170ECD6F46BB2 /* Pods_Sakura_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sakura_Tests.framework; path = "Pods-Sakura_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD796BB89C477B32C4B170ECD6F46BB2 /* Pods_Sakura_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sakura_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47A6FF39077C361BF013D39BC64C096 /* Pods-Sakura_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sakura_Example-Info.plist"; sourceTree = "<group>"; };
 		C99209203BA12868DAEBEBE14C15EA3B /* Sakura-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Sakura-dummy.m"; sourceTree = "<group>"; };
 		D379A31F1F2CFBA4BB5ED55C445BC911 /* Pods-Sakura_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sakura_Example-umbrella.h"; sourceTree = "<group>"; };
 		D59BB0B1FC69E628328F3BCE731C9CF3 /* Sakura-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Sakura-Info.plist"; sourceTree = "<group>"; };
-		DF7905023F9278D916D5DF6DE2695664 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		EEC8A2122BDB2C3290EE960197FEBF40 /* Sakura.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Sakura.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DF7905023F9278D916D5DF6DE2695664 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EEC8A2122BDB2C3290EE960197FEBF40 /* Sakura.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Sakura.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FECB3ECDB5E542608F2F73236CCB70E5 /* Pods-Sakura_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sakura_Tests.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 			children = (
 				0A5E8D3E693D7A8BC412DFC9B5FAF967 /* Sakura.swift */,
 				351AA42CEE9E800AC27E83BE50597389 /* SakuraView.swift */,
+				2CE9F6F32432E94700403FFB /* Petal.swift */,
 				5179CA95BCABD03BA9924E6891B81E37 /* Pod */,
 				D43E122996846C928276C24C6DAE9D99 /* Support Files */,
 			);
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE9F6F42432E94700403FFB /* Petal.swift in Sources */,
 				F651501E6AE0C16DC8884BDA52D10F16 /* Sakura-dummy.m in Sources */,
 				B32211E0F5DF9469711BF048FEEBF69A /* Sakura.swift in Sources */,
 				C894417AB7A3159735BB4E05BB4D6572 /* SakuraView.swift in Sources */,
@@ -559,8 +563,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

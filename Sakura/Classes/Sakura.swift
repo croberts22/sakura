@@ -49,25 +49,7 @@ public struct Message {
     
 }
 
-public final class Petal {
-    
-    let destinationView: UIView
-    let message: Message
-    let style: PetalStyle
-    
-    public init(navigationController: UINavigationController, message: Message, style: PetalStyle) {
-        self.destinationView = navigationController.view
-        self.message = message
-        self.style = style
-    }
-    
-    public init(viewController: UIView, message: Message, style: PetalStyle) {
-        self.destinationView = viewController
-        self.message = message
-        self.style = style
-    }
-    
-}
+
 
 /// A message orchestrator that gently displays messages in full bloom. 🌸
 public final class Sakura {
