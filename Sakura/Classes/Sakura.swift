@@ -57,12 +57,28 @@ public final class Sakura {
     // MARK: - Properties
 
     public static let shared: Sakura = Sakura()
+    private let window: UIWindow
+    private let parentView: UIView = UIView()
     private var queue: [Petal] = [Petal]()
     weak var currentPetal: Petal?
 
     // MARK: - Initializers
-    
-    public init() { }
+
+    public init(window: UIWindow) {
+        self.window = window
+
+        setup()
+    }
+
+    convenience public init() {
+
+        guard let window = UIApplication.shared.keyWindow else {
+            assertionFailure("This application should have a `keyWindow`.")
+            fatalError()
+        }
+
+        self.init(window: window)
+    }
 
     // MARK: - Public Methods
     
@@ -73,6 +89,35 @@ public final class Sakura {
     }
 
     // MARK: - Private Methods
+
+    private func setup() {
+        setupViews()
+        setupConstraints()
+    }
+
+    private func setupViews() {
+        parentView.translatesAutoresizingMaskIntoConstraints = false
+        parentView.isUserInteractionEnabled = false
+        parentView.backgroundColor = .blue
+        parentView.clipsToBounds = true
+
+        // Add this "hidden" view to the current window.
+        // We set the constraints for now to be approximately the height of the navigation bar
+        // and then some.
+        //
+        // I still haven't decided if we should customize this framework to display
+        // it elsewhere besides above or under the navigation bar.
+        window.addSubview(parentView)
+    }
+
+    private func setupConstraints() {
+        parentView.topAnchor.constraint(equalTo: window.topAnchor).isActive = true
+        parentView.leftAnchor.constraint(equalTo: window.leftAnchor).isActive = true
+        parentView.rightAnchor.constraint(equalTo: window.rightAnchor).isActive = true
+
+        // FIXME: Arbitrary constant for now.
+        parentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    }
     
     private func animate(petal: Petal) {
         let sakuraView: SakuraView = SakuraView(petal: petal)
@@ -82,32 +127,34 @@ public final class Sakura {
     
     private func prepare(sakuraView: SakuraView, with petal: Petal) -> UIViewPropertyAnimator {
         sakuraView.backgroundColor = .purple
-        
-        let parentView: UIView = petal.destinationView
-        
+
         parentView.addSubview(sakuraView)
+        // Maybe set this someday for masking underneath the navigation bar?
+//        parentView.maskView(with: window, visibleSize: CGSize(width: window.frame.size.width, height: petal.height))
         
-        let bottomAnchor = sakuraView.bottomAnchor.constraint(equalTo: parentView.topAnchor, constant: -80.0)
-        bottomAnchor.isActive = true
+        let topAnchor = sakuraView.topAnchor.constraint(equalTo: parentView.topAnchor, constant: -100.0)
+        topAnchor.isActive = true
         
         sakuraView.leftAnchor.constraint(equalTo: parentView.leftAnchor).isActive = true
         sakuraView.rightAnchor.constraint(equalTo: parentView.rightAnchor).isActive = true
-        sakuraView.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        sakuraView.heightAnchor.constraint(equalToConstant: petal.height).isActive = true
         
         parentView.layoutIfNeeded()
-        
-        
-        // FIXME: Add constant to Petal enum.
-        bottomAnchor.constant = 160.0
+
+        topAnchor.constant = window.rootViewController?.statusBarHeight ?? 30.0
         let animator: UIViewPropertyAnimator = sakuraView.animator {
-            parentView.layoutIfNeeded()
+            self.parentView.layoutIfNeeded()
         }
-        
-        bottomAnchor.constant = -80.0
-        animator.addAnimations({
-            animator.isReversed = true
-        }, delayFactor: 3.0)
-        
+
+        animator.addCompletion { (_) in
+            let reverseAnimation: UIViewPropertyAnimator = sakuraView.animator {
+                topAnchor.constant = -100.0
+                self.parentView.layoutIfNeeded()
+            }
+
+            reverseAnimation.startAnimation(afterDelay: 3.0)
+        }
+
         return animator
     }
 

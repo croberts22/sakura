@@ -25,7 +25,8 @@ class DemoViewController: UIViewController {
 
     @IBAction func buttonPressed() {
         let sakura: Sakura = Sakura.shared
-        let petal: Petal = Petal(viewController: view, message: Message(message: "Hello, Sakura! 🌸"), style: .standard)
+        let message: Message = Message(message: "Hello, Sakura! 🌸")
+        let petal: Petal = Petal(message: message, style: .standard)
         sakura.display(petal: petal)
     }
     

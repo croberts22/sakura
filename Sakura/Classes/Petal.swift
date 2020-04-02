@@ -11,22 +11,16 @@ public final class Petal {
 
     // MARK: - Properties
 
-    let destinationView: UIView
-    let message: Message
-    let style: PetalStyle
+    public let message: Message
+    public let style: PetalStyle
+    public let height: CGFloat
 
     // MARK: - Initializers
 
-    public init(navigationController: UINavigationController, message: Message, style: PetalStyle) {
-        self.destinationView = navigationController.view
+    public init(message: Message, style: PetalStyle, height: CGFloat = 44.0) {
         self.message = message
         self.style = style
-    }
-
-    public init(viewController: UIView, message: Message, style: PetalStyle) {
-        self.destinationView = viewController
-        self.message = message
-        self.style = style
+        self.height = height
     }
 
 }

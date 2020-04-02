@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14A65900A2C1E98011C7446234428D2C /* Sakura-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4A47ABE754C2BF5B67F1D7344E37884 /* Sakura-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C43DC0624359E2A0011A253 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C43DC0524359E2A0011A253 /* UIView+Extensions.swift */; };
 		2CE9F6F42432E94700403FFB /* Petal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9F6F32432E94700403FFB /* Petal.swift */; };
 		3C972D33BF73CB166359B10ED99D0E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		48EBE5699035A1ECC6DCB0BDE687BDCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -43,6 +44,7 @@
 		0A5E8D3E693D7A8BC412DFC9B5FAF967 /* Sakura.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sakura.swift; path = Sakura/Classes/Sakura.swift; sourceTree = "<group>"; };
 		161CF7766FBEAE70A1BD8AA0E20AE713 /* Sakura.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Sakura.modulemap; sourceTree = "<group>"; };
 		26AD8183EC67323348F396A3C47B8EAE /* Pods-Sakura_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sakura_Tests-dummy.m"; sourceTree = "<group>"; };
+		2C43DC0524359E2A0011A253 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Sakura/Classes/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		2CE9F6F32432E94700403FFB /* Petal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Petal.swift; path = Sakura/Classes/Petal.swift; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		351AA42CEE9E800AC27E83BE50597389 /* SakuraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SakuraView.swift; path = Sakura/Classes/SakuraView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				2CE9F6F32432E94700403FFB /* Petal.swift */,
 				5179CA95BCABD03BA9924E6891B81E37 /* Pod */,
 				D43E122996846C928276C24C6DAE9D99 /* Support Files */,
+				2C43DC0524359E2A0011A253 /* UIView+Extensions.swift */,
 			);
 			name = Sakura;
 			path = ../..;
@@ -381,6 +384,7 @@
 			files = (
 				2CE9F6F42432E94700403FFB /* Petal.swift in Sources */,
 				F651501E6AE0C16DC8884BDA52D10F16 /* Sakura-dummy.m in Sources */,
+				2C43DC0624359E2A0011A253 /* UIView+Extensions.swift in Sources */,
 				B32211E0F5DF9469711BF048FEEBF69A /* Sakura.swift in Sources */,
 				C894417AB7A3159735BB4E05BB4D6572 /* SakuraView.swift in Sources */,
 			);
