@@ -93,12 +93,15 @@ struct SakuraModifier: ViewModifier {
                 .padding()
                 .animation(.gentleDrop())
                 .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
+                // TODO: Still have to figure out transitions when views disappear.
                 .animation(.gentleDrop())
                 .onTapGesture {
                     withAnimation {
                         self.bloom = false
                     }
                 }
+                // FIXME: Small bug exists if the view stays on screen and we try to
+                // add another one before it gets removed.
                 .onAppear() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + petal.duration) {
                         withAnimation {
