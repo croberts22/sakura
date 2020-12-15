@@ -1,13 +1,13 @@
 //
-//  BannerView.swift
+//  DemoView.swift
 //  
 //
-//  Created by Corey Roberts on 11/8/20.
+//  Created by Corey Roberts on 12/15/20.
 //
 
 import SwiftUI
 
-struct BannerView: View {
+struct DemoView: View {
     
     @State var bloom: Bool = false
     @State var petal: SakuraPetal = SakuraPetal(title: "Sakura 🌸",
@@ -52,10 +52,10 @@ struct BannerView: View {
     }
 }
 
-struct BannerView_Previews: PreviewProvider {
+struct DemoView_Previews: PreviewProvider {
     
     static var previews: some View {
-        BannerView()
+        DemoView()
     }
     
 }

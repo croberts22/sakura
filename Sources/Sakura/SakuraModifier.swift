@@ -72,37 +72,32 @@ struct SakuraModifier: ViewModifier {
     @Binding var petal: SakuraPetal
     @Binding var bloom: Bool
     
+    @State private var moveAmount: CGFloat = 1.0
+    
     func body(content: Content) -> some View {
         ZStack {
             content
             if bloom {
                 VStack {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 10.0) {
-                            Text(petal.title).bold()
-                            Text(petal.message)
-                        }
-                        Spacer()
-                    }
-                    .foregroundColor(.white)
-                    .padding(12)
-                    .background(petal.type.backgroundColor)
-                    .cornerRadius(8)
+                    SakuraView(petal: $petal)
                     Spacer()
                 }
-                .padding()
                 .animation(.gentleDrop())
                 .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
                 // TODO: Still have to figure out transitions when views disappear.
-                .animation(.gentleDrop())
                 .onTapGesture {
                     withAnimation {
                         self.bloom = false
                     }
                 }
+//                .gesture(
+//                    DragGesture()
+//                        .onChanged(<#T##action: (DragGesture.Value) -> Void##(DragGesture.Value) -> Void#>)
+//                )
                 // FIXME: Small bug exists if the view stays on screen and we try to
                 // add another one before it gets removed.
                 .onAppear() {
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + petal.duration) {
                         withAnimation {
                             self.bloom = false
